@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">PAWAN PATIL</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {% if request.user.is_authenticated %}
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="margin-left: 300px;">
+        <button class="btn btn-outline-success" type="submit" >Search</button>
+      </form>
+      {% endif %}
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">HOME</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account:logout' %}">Logout</a>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'account:account' request.user.pk %}">Account</a>
+            </li>
+          </li>{% if request.user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'bazzar:add_product' %}">Add products</a>
+          </li>
+          
+          {% endif %}  
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account:register' %}">register</a>   
+             
+           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account:login' %}">login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>

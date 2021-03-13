@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<body class="conatiner" style="background-color:rgb(84, 192, 84)">
+<div class="conatiner" >
+    <div class="row">
+        <div class="col-12">
+            <div class="card mx-auto" style="width: 50rem; background-color:rgb(179, 179, 179); margin:30px" >
+                <i class="fas fa-gift fa-10x mx-auto"></i>
+                <div class="card-body ">
+                <h5 class="card-title">HURRAY ORDER PLACED</h5>
+                <p>name:{{ request.user.first_name }} </p>
+                <p>order id:</p>
+                <p>product name:{{ product.product_name }}</p>
+                <p>description:{{product.description}}</p>
+                <p class="card-text">your order will be delivered within 2 days </p>
+               <center><a href="{% url 'bazzar:product_list' %}" class="btn btn-primary ">back to home </a></center>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+
+
+{% endblock content %}

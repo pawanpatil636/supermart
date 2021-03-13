@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main class="page payment-page">
+  <section class="payment-form dark">
+    <div class="container">
+      <div class="block-heading">
+
+      </div>
+
+      <form action="." method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="products">
+          <h2 class="title mx-auto" style="text-shadow : 0px 1px 10px #3a7ac3;">PRODUCT DETAILS</h2>
+          <hr>
+          <div class="item">
+            <span class="price"><h6> NAME OF PRODUCT :</h6>{{product.product_name}}</span>
+            <p class="item-description"> <h6>DESCRIPTION :</h6>{{product.description }}</p>
+            <p class="item-name"> <h6>PRICE :</h6>{{product.price}} RS/--</p>
+        </div>
+        <hr>
+         <h2 style="text-shadow : 0px 1px 10px #3a7ac3;">ADDRESS</h2>
+        <div class="form-group col-sm-7">
+            <label for="flat_numberr">flat number</label>
+            <input id="flat_number" type="number" class="form-control" name="flat_number" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+            0 0 1px rgba(0, 0, 0, 0.3), 
+            0 3px 7px rgba(0, 0, 0, 0.3), 
+            inset 0 1px rgba(255,255,255,1),
+            inset 0 -3px 2px rgba(0,0,0,0.25);">
+        </div>
+        <div class="form-group col-sm-7">
+            <label for="appartment_name">appartment name</label>
+            <input id="appartment_name" type="text" class="form-control" name="appartment_name" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+            0 0 1px rgba(0, 0, 0, 0.3), 
+            0 3px 7px rgba(0, 0, 0, 0.3), 
+            inset 0 1px rgba(255,255,255,1),
+            inset 0 -3px 2px rgba(0,0,0,0.25);">
+        </div> 
+        <div class="form-group col-sm-7">
+            <label for="street_name">street name</label>
+            <input id="street_name" type="text" class="form-control" name="street_name" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+            0 0 1px rgba(0, 0, 0, 0.3), 
+            0 3px 7px rgba(0, 0, 0, 0.3), 
+            inset 0 1px rgba(255,255,255,1),
+            inset 0 -3px 2px rgba(0,0,0,0.25);">
+   
+        </div> 
+        <div class="form-group col-sm-7">
+            <label for="pincode" style="text-shadow : 0px 0px 10px">pincode</label>
+            <input id="pincode" type="number" class="form-control" name="pincode" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+            0 0 1px rgba(0, 0, 0, 0.3), 
+            0 3px 7px rgba(0, 0, 0, 0.3), 
+            inset 0 1px rgba(255,255,255,1),
+            inset 0 -3px 2px rgba(0,0,0,0.25);">
+   
+        </div> 
+        <!-- <div class="form-group col-sm-7">
+            <label for="state">state</label>
+            <input id="state" type="text" class="form-control" name="state" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+            0 0 1px rgba(0, 0, 0, 0.3), 
+            0 3px 7px rgba(0, 0, 0, 0.3), 
+            inset 0 1px rgba(255,255,255,1),
+            inset 0 -3px 2px rgba(0,0,0,0.25);">
+   
+        </div> -->
+        <div class="col-sm-7">
+          <label for="validationDefault04" class="form-label">State</label>
+          <select class="form-select" id="validationDefault04" required style="box-shadow: 
+          0 0 1px rgba(0, 0, 0, 0.3), 
+          0 3px 7px rgba(0, 0, 0, 0.3), 
+          inset 0 1px rgba(255,255,255,1),
+          inset 0 -3px 2px rgba(0,0,0,0.25);">
+ >
+            <option selected disabled value="">Choose...</option>
+            <option>Andhra pradesh </option>
+            <option>Arunachal preadesh</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Chattisgarh</option>
+            <option>Gujurat</option>
+            <option>Hariyana</option>
+            <option>Himachal pradesh</option>
+            <option>Jharkhand</option>
+            <option>Karnataka</option>
+            <option>Kerla</option>
+            <option>Madhya pradesh</option>
+            <option>Maharashtra</option>
+            <option>Manipur</option>
+            <option>Meghalaya</option>
+            <option>Mizoram</option>
+            <option>Nagaland</option>
+            <option>odissa</option>
+            <option>Punjab</option>
+            <option>Rajasthan</option>
+            <option>Sikkim</option>
+            <option>Tamin Nadu</option>
+            <option>Telangana</option>
+            <option>Tripura</option>
+            <option>Uttarakhand</option>
+            <option>Uttarpradesh</option>
+            <option>West Bengal </option>
+          </select>
+        </div></br>
+
+
+        <!-- <div class="form-group col-sm-7">
+            <label for="country">country</label>
+            <input id="country" type="text" class="form-control" name="country" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+            0 0 1px rgba(0, 0, 0, 0.3), 
+            0 3px 7px rgba(0, 0, 0, 0.3), 
+            inset 0 1px rgba(255,255,255,1),
+            inset 0 -3px 2px rgba(0,0,0,0.25);"> -->
+
+
+
+            <div class="col-sm-7">
+              <label for="validationDefault04" class="form-label">country</label>
+              <select class="form-select" id="validationDefault04" required style="box-shadow: 
+              0 0 1px rgba(0, 0, 0, 0.3), 
+              0 3px 7px rgba(0, 0, 0, 0.3), 
+              inset 0 1px rgba(255,255,255,1),
+              inset 0 -3px 2px rgba(0,0,0,0.25);">
+               <option selected disabled value="">Choose...</option>
+               <option>Afghanistan</option>
+               <option>Albania</option>
+               <option>Algeria</option>
+               <option>Andorra</option>
+               <option>Angola</option>
+               <option>Antigua and Barbuda</option>
+               <option>Argentina</option>
+               <option>Angola</option>
+               <option>Armenia</option>
+               <option>Australia</option>
+               <option>Austria</option>
+               <option>Azerbaijan</option>
+               <option>Bangladesh</option>
+               <option>Barbados</option>
+               <option>Belgium</option>
+               <option>Brazil</option>
+               <option>Cambodia</option>
+               <option>Canada</option>
+               <option>Cape Verde</option>
+               <option>China</option>
+               <option>Colombia</option>
+               <option>Comoros</option>
+               <option>Zimbabwe</option>
+               <option>Denmark</option>
+               <option>Dominican Republic</option>
+               <option>Egypt</option>
+               <option>Fiji</option>
+               <option>France</option>
+               <option>Germany</option>
+               <option>Guyana</option>
+               <option>Iceland</option>
+               <option>India</option>
+               <option>Indonesia</option>
+               <option>Iran</option>
+               <option>Iraq</option>
+               <option>Ireland</option>
+               <option>Italy </option>
+               <option>Jamaica</option>
+               <option>Jordan</option>
+               <option>Kenya</option>
+               <option>North Korea</option>
+               <option>South Korea</option>
+               <option>Kuwait</option>
+               <option>Madagascar</option>
+               <option>Malaysia</option>
+               <option>Maldives</option>
+               <option>Mexico</option>
+               <option>Federated States of Micronesia</option>
+               <option>Morocco</option>
+               <option>Myanmar (Burma)</option>
+               <option>Namibia</option>
+               <option>Nepal</option>
+               <option>Netherlands</option>
+               <option>	New Zealand</option>
+               <option>Pakistan</option>
+               <option>Peru</option>
+               <option>Pakistan</option>
+               <option>Philippines</option>
+               <option>Romania</option>
+               <option>Russia</option>
+               <option>	Saint Kitts and Nevis</option>
+               <option>	Saudi Arabia</option>
+               <option>Singapore</option>
+               <option>	South Africa</option>
+               <option>Sri Lanka</option>
+               <option>Swaziland</option>
+
+             </select>
+           </div>
+   
+        </div>
+        <HR>
+        <div class="card-details">
+        <h2 class="title" style="text-shadow : 0px 1px 10px #3a7ac3;">Credit Card Details</h2><HR>
+          <div class="row">
+            <div class="form-group col-sm-8">
+              <label for="card-holder">Card Holder</label>
+              <input id="card-holder" type="text" class="form-control" name="card_holder" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+              0 0 1px rgba(0, 0, 0, 0.3), 
+              0 3px 7px rgba(0, 0, 0, 0.3), 
+              inset 0 1px rgba(255,255,255,1),
+              inset 0 -3px 2px rgba(0,0,0,0.25);">
+     
+            </div>
+            <!-- <div class="form-group col-sm-5">
+              <label for="">Expiration Date</label>
+              <div class="input-group expiration-date">
+                <input type="number" class="form-control" name="expiry_date" placeholder="MM" aria-label="MM" aria-describedby="basic-addon1">
+                <span class="date-separator"></span>
+                <input type="number" class="form-control" name="expiry_date" placeholder="YY" aria-label="YY" aria-describedby="basic-addon1">
+              </div>
+            </div> -->
+            <div class="form-group col-sm-8">
+              <label for="card-number">Card Number</label>
+              <input id="card-number" type="text" class="form-control" name="card_number" placeholder="Card Number" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+              0 0 1px rgba(0, 0, 0, 0.3), 
+              0 3px 7px rgba(0, 0, 0, 0.3), 
+              inset 0 1px rgba(255,255,255,1),
+              inset 0 -3px 2px rgba(0,0,0,0.25);">
+     
+            </div>
+            <div class="form-group col-sm-8">
+              <label for="cvc">CVV</label>
+              <input id="cvc" type="text" class="form-control" name="cvv" placeholder="CVC" aria-label="Card Holder" aria-describedby="basic-addon1" style="box-shadow: 
+              0 0 1px rgba(0, 0, 0, 0.3), 
+              0 3px 7px rgba(0, 0, 0, 0.3), 
+              inset 0 1px rgba(255,255,255,1),
+              inset 0 -3px 2px rgba(0,0,0,0.25);">
+     
+            </div>
+            <div class="form-group col-sm-12">
+
+            </div>
+          </div>
+        </div>
+        <input type="submit"  class="btn btn-primary" style="width: 250px;">
+      
+      </form>
+    </div>
+  </section>
+</main>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+
+
+
+
+
+{% endblock content %}

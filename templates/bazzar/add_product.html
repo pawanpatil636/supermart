@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class='col-6 mx-auto my-5'>
+        <div class="card broder-info p-5">
+            <div class="h4 alert alert-success text-center" role="alert">ADD PRODUCT</div>
+            <form action="." method='post' enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="validationCustom01" class="form-label">PRODUCT NAME</label>
+                <input type="text" class="form-control"  name="product_name" id="exampleInputEmail1" value="{{product.product_name}}" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputImage" class="form-label">Image</label>
+                <input type="file" class="form-control"  name="image" id="exampleInputImage" value="{{ product.image.url }}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">CATEGORY</label>
+                <input type="text" class="form-control"  name="category" id="exampleInputEmail1" value="{{ product.category }}" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">DESCRIPTION</label>
+                    <input type="text" class="form-control"  name="description" id="exampleInputEmail1" value="{{ product.description }}" aria-describedby="emailHelp">
+            </div>    
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">PRICE</label>
+                <input type="number" class="form-control" name="price" value="{{ product.price }}" id="exampleInputPassword1">
+            </div>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </form>
+</div>
+</div>
+
+
+
+{% endblock content %}

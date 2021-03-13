@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="alert alert-success h3" style="text-align:center" role="alert">product order list</div>
+<table class="table table-bordered border-success ">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">customer name</th>
+        <th scope="col">mobile</th>
+        <th scope="col">email</th>
+        <th scope="col">address</th>
+        <th scope="col">product name</th>
+        <th scope="col">price</th>
+        <th scope="col">status</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for o in order %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ o.user.username }}</td>
+        <td>{{ o.address.mobile }}</td>
+        <td>{{ o.user.email }}</td>
+        <td>{{ o.address.appartment_name }}</td>
+        <td>{{ o.product_name }}</td>
+        <td>{{ o.price }}</td>
+        <td>
+
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ o.status }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="{% url 'adminapp:order_approve' o.pk %}">Approve</a></li>
+              <li><a class="dropdown-item" href="{% url 'adminapp:order_processing' o.pk %}">processing</a></li>
+              <li><a class="dropdown-item" href="{% url 'adminapp:order_billing' o.pk %}">billing</a></li>
+              <li><a class="dropdown-item" href="{% url 'adminapp:order_shipping' o.pk %}">shipping</a></li>
+              <li><a class="dropdown-item" href="{% url 'adminapp:order_dispatched' o.pk %}">dispatched</a></li>
+              <li><a class="dropdown-item" href="{% url 'adminapp:order_delivered' o.pk %}">delivered</a></li>
+              <li><a class="dropdown-item" href="{% url 'adminapp:order_cancelled' o.pk %}">cancelled</a></li>
+            </ul>
+          </div>
+         
+        
+        </td>
+      </tr>
+      {% endfor %}
+    
+    </tbody>
+  </table>
+
+
+
+
+{% endblock content %}

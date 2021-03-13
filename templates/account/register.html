@@ -1,0 +1,235 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class='col-6 mx-auto my-5'>
+    <div class="card broder-info p-5">         
+        <div class="h4 alert alert-success text-center" role="alert">registeration page</div>
+            <form action="" method='post' enctype="multipart/form-data" class="row  needs-validation" novalidate onsubmit="return validateform()" name="register">
+                    {% csrf_token %} 
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">username</label>
+                    <input type="text" class="form-control"  name="user_name" id="11" placeholder="username" required>
+                    <div id="aa"></div>
+                    
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">firstname</label>
+                    <input type="text" class="form-control" name="first_name" id="22" required>
+                    <div id="bb"></div>
+                 
+                    </div>
+                  
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">last name </label>
+                        <input type="text" class="form-control" name="last_name" id="33" required>
+                   <div id="cc"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">email</label>
+                        <input type="email" class="form-control" name="email" id="44" required>
+                       
+                    
+                    <div id ="emm"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">mobile number</label>
+                        <input type="tel" class="form-control" name="mobile_number" id="55" required>
+                        <div id="dd"></div>
+                    
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">date of birth</label>
+                        <input type="date" class="form-control" name="dateofbirth" id="66" required>
+                        <div id="ee"></div>
+                   
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">age</label>
+                        <input type="number" class="form-control" name= "age" id="77" required>
+                        <div id="ff"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">gender</label>
+                        <input type="text" class="form-control" name= "gender" id="88" required>
+                        <div id="gg"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">password</label>
+                        <input type="password" class="form-control" name= "password" id="99" required>
+                        <div id="hh"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">password1</label>
+                        <input type="password" class="form-control" name= "password1" id="10" required>
+                          
+                        <div id="ii"></div>
+                    
+                    </div>
+                    
+                
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 200px">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+
+function validateform() 
+{
+    var y = document.forms["register"]["user_name"].value; 
+    var z = document.forms["register"]["first_name"].value; 
+    var a = document.forms["register"]["last_name"].value; 
+    var x = document.forms["register"]["email"].value;
+    var b = document.forms["register"]["mobile_number"].value; 
+    var c = document.forms["register"]["dateofbirth"].value; 
+    var d = document.forms["register"]["age"].value; 
+    var e = document.forms["register"]["gender"].value; 
+    var f = document.forms["register"]["password"].value; 
+    var g = document.forms["register"]["password1"].value; 
+  var  pp=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(.[a-zA-Z0-9-]+)*$/;
+ 
+ if (y == "")
+  {
+    document.getElementById("11").style.border = "2px solid red ";
+    document.getElementById("aa").innerHTML="enter a valid username";
+    return false;
+
+  }
+  if (z == "")
+  {
+    document.getElementById("22").style.border = "2px solid red ";
+    document.getElementById("bb").innerHTML="enter a valid firstname";
+    return false;
+
+  }
+  if (a == "")
+  {
+    document.getElementById("33").style.border = "2px solid red ";
+    document.getElementById("cc").innerHTML="enter a valid lastname";
+    return false;
+
+  }
+   if ( !pp.test(x))
+  {
+    document.getElementById("44").style.border = "2px solid red ";    
+    document.getElementById("emm").innerHTML="inavlid email";
+    return false;
+  }
+  if (pp == "")
+  {
+    document.getElementById("44").style.border = "2px solid red ";
+    document.getElementById("emm").innerHTML="enter emailid";
+    return false;
+
+  }
+  if (b == "")
+  {
+    document.getElementById("55").style.border = "2px solid red ";
+    document.getElementById("dd").innerHTML="enter a valid mobilenumber";
+    return false;
+
+  }
+  if (c == "")
+  {
+    document.getElementById("66").style.border = "2px solid red ";
+    document.getElementById("ee").innerHTML="enter a valid dateofbirth";
+    return false;
+
+  }
+  if (d == "")
+  {
+    document.getElementById("77").style.border = "2px solid red ";
+    document.getElementById("ff").innerHTML="enter a valid age";
+    return false;
+
+  }
+   if (e == "")
+  {
+    document.getElementById("88").style.border = "2px solid red ";
+    document.getElementById("gg").innerHTML="enter a valid gender";
+    return false;
+
+  } 
+  if (f == "")
+  {
+    document.getElementById("11").style.border = "2px solid red ";
+    document.getElementById("hh").innerHTML="enter a valid password";
+    return false;
+
+  }
+   if (g == "")
+  {
+    document.getElementById("ii").innerHTML="enter a valid password1";
+    return false;
+
+  }
+  if (f != g )
+  {
+    document.getElementById("ii").innerHTML="password not match";
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+  
+}
+
+
+
+// function validateform(){
+// var pass = document.forms["register"]["password"] 
+// re = /[0-9]/;
+// if(!re.test(password.value)) {
+//     alert("Error: password must contain at least one number (0-9)!");
+//     pass.focus();
+//     return false;
+
+// }return true;
+// }
+
+</script>
+
+
+
+        
+      
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    {% endblock content %}                    

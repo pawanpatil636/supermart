@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-12">
+    <div class="card mx-auto  " style="width:19rem; margin: 15px; border-style:ridge; ">
+   <img src="..." class="card-img-top" alt="...">
+  <img src="{{ product.image.url }}" class="card-img-top" alt="..." style="width: 100%; height: 100%; border-radius: 12px;  ">
+
+  <div class="card-body">
+    <h5 class="card-title"> NAME:{{product.product_name }}</h5>
+    <p>DESCRIPTION :{{product.description }}</p>
+    <p class="card-text">PRICE : {{product.price }} Rs/-</p>
+    <a href="{% url 'bazzar:coustomer_address_payment' product.pk %}" class="btn btn-primary">BUY NOW</a>
+  </div>
+</div>
+</div>
+</div>
+</div> -->
+
+<div class="row no-gutters">
+  <div class="col-md-5 no-gutters">
+      <div class="left">
+          <div class="card1" style="height:400px; width:400px;">
+            <div class="card1-body">
+               
+            <img src="{{ product.image.url }}" class="card-img-top" alt="..." style="width: 130%; height:100%; border-radius: 12px; margin-left: 30px;margin-top: 50px;  ">
+            </div>
+            </div> 
+        </div>
+    </div>
+    <div class="col-md-6 no-gutters">
+        <div class="right">
+            <!-- <div class="car" style="height:400px; width:400px;"> -->
+                <div class="car-body">
+                  <div class="card-body " style="margin: 18px;">
+                    <h5 class="card-title"> NAME:{{product.product_name }}</h5>
+                    <p><h6>DESCRIPTION</h6>:{{product.description }}</p>
+                    <h2 class="card-text"> $ {{product.price }}</h2></br></br>
+
+                    <h5>Available offers</h5>
+
+                      <h6>Buy More, Save MoreBuy worth ₹2500-3499 save ₹200;Buy worth ₹3500 save ₹350  <a href="">See all productsT&C</a></h6></br>
+                      
+                      <h6> Bank Offer10% off on SBI Credit Card, up to ₹250. On orders of ₹2000 and above<a href="">T&C</a></h6></br>
+                      
+                      <h6> Bank Offer5% Unlimited Cashback on Flipkart Axis Bank Credit Card <a href="">T&C</a></h6></br>
+                      
+                      <h6>Bank Offer10% Off on Bank of Baroda Mastercard debit card first time transaction, Terms and Condition apply <a href="">T&C</a></h6></br>
+                      
+                  </br>
+                  <div class="row no-gutters">
+                  <div class="col-md-2 no-gutters">
+                    <div class="left">
+                    <h5>service:</h5>
+                  </div>
+                </div>
+                <div class="col-md-6 no-gutters">
+                  <div class="right"></br></br>
+                    <p> Easy Doorstep Return</p>
+                    <p> Schedule your delivery</p>
+                    <p> Cash on Delivery available</p>
+                  </div>
+                </div>
+                  
+                </div>
+                    
+                    
+                    
+                      <a href="{% url 'bazzar:coustomer_address_payment' product.pk %}" class="btn btn-primary" style="width:250px ;">BUY NOW</a>
+                  </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

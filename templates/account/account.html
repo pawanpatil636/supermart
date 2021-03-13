@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+ <div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Account</h4>
+</div>
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+      <div class="card mx-auto  " style="width: 50rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">username : {{ request.user }}</h5>
+      <p><h5>email: {{ request.user.email }}</h5></p>
+      <p class="card-text"> {{ request.Account.phone_number }} </p>
+     
+    </div>
+  </div>
+  </div>
+  </div>
+  </div> 
+
+
+{% endblock content %}

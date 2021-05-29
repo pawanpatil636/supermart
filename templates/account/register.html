@@ -80,23 +80,23 @@
 
 
 <script>
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+// (function() {
+//   'use strict';
+//   window.addEventListener('load', function() {
+//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//     var forms = document.getElementsByClassName('needs-validation');
+//     // Loop over them and prevent submission
+//     var validation = Array.prototype.filter.call(forms, function(form) {
+//       form.addEventListener('submit', function(event) {
+//         if (form.checkValidity() === false) {
+//           event.preventDefault();
+//           event.stopPropagation();
+//         }
+//         form.classList.add('was-validated');
+//       }, false);
+//     });
+//   }, false);
+// })();
 
 
 function validateform() 
@@ -175,22 +175,36 @@ function validateform()
     return false;
 
   } 
-  if (f == "")
+  if (f == "") or (f !> 8)
   {
     document.getElementById("11").style.border = "2px solid red ";
     document.getElementById("hh").innerHTML="enter a valid password";
     return false;
 
   }
-   if (g == "")
+   if (g == "") or (f !> 8)
   {
     document.getElementById("ii").innerHTML="enter a valid password1";
     return false;
 
+
+  }
+  if (f !> 8) 
+  {
+    document.getElementById("hh").innerHTML="enter a valid password1";
+    return false;
+}
+ 
+ if (g !> 8) 
+  {
+    document.getElementById("ii").innerHTML="enter a valid password1";
+    return false;
+    
+
   }
   if (f != g )
   {
-    document.getElementById("ii").innerHTML="password not match";
+    document.getElementById("hh ").innerHTML="password not match";
 
   }
 
@@ -232,4 +246,4 @@ function validateform()
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
-    {% endblock content %}                    
+{% endblock content %}                    

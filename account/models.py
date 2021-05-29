@@ -9,7 +9,7 @@ GENDER_CHOICES=(
 
 class Account(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE) 
-    mobile_number = models.IntegerField() 
+    mobile_number = models.CharField(max_length=10) 
     DOB = models.DateField()
     gender = models.CharField(max_length=10,choices=GENDER_CHOICES)
     age =models.IntegerField()

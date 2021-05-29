@@ -10,7 +10,7 @@ from .models import Payment
 def add_product_view(request):
     if request.user.is_superuser:
         if request.method == "POST":
-            productname=request.POST['product_name']
+            productname = request.POST['product_name']
             category=request.POST['category']
             price=request.POST['price']
             description=request.POST['description']
@@ -18,6 +18,7 @@ def add_product_view(request):
 
             product=Product(product_name=productname,price=price,category=category,description=description,image=image)
             product.save()
+
             return redirect('/bazzar/product-list/')
         return render(request,'bazzar/add_product.html')
     else:
@@ -25,6 +26,16 @@ def add_product_view(request):
 
 def product_list_view(request):
     product = Product.objects.all()
+    count = []
+    sum = 0
+    for i in product:
+        prices = i.price
+        sum += prices
+        count.append(i.price)
+        print(prices)
+    print(sum/len(count))
+
+
     return render(request, "bazzar/product_list.html",{'product':product})
 
 def product_details_view(request,pk):

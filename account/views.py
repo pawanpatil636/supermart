@@ -10,7 +10,7 @@ def register(request):
         first_name=request.POST['first_name']
         last_name=request.POST['last_name']
         email=request.POST['email']
-        mobile_number=request.POST['mobile-number']
+        mobile_number=request.POST['mobile_number']
         DOB =request.POST['dateofbirth']
         gender=request.POST['gender']
         age=request.POST['age']
